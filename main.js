@@ -1,8 +1,8 @@
 noseX=0;
 noseY=0;
 function preload(){
-clown_nose=loadImage('https://i.postimg.cc/JnLkfQBr/521-5219477-transparent-png-moustache-transparent-background-handlebar-moustache-png.png');
-}g
+clown_nose=loadImage('https://i.postimg.cc/L8PtZGH6/Clown-nose.png');
+}
 function setup(){
     canvas=createCanvas(300,300);
     canvas.center();
@@ -19,15 +19,15 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length>0){
         console.log(results);
-        noseX=results[0].pose.nose.x-55;
-        noseY=results[0].pose.nose.y+10;
+        noseX=results[0].pose.nose.x-30;
+        noseY=results[0].pose.nose.y-35;
         console.log("nose x ="+noseX);
         console.log("nose y ="+noseY);
     }
 }
 function draw(){
 image(video,0,0,300,300);
-image(clown_nose,noseX,noseY,120,20);
+image(clown_nose,noseX,noseY,80,80);
 }
 function take_snapshot(){
     save('myFilterImage.png');
